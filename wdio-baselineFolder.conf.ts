@@ -1,22 +1,25 @@
-import { defaultConfig } from "./wdio.base.conf";
+import { baseConfig } from "./wdio.base.conf";
 import type { ClassOptions } from 'webdriver-image-comparison';
 import path from "path";
 
 type VisualServiceOptions = ClassOptions;
 
 export const config: WebdriverIO.Config = {
-    ...defaultConfig,
-	services: [
+    ...baseConfig,
+    services: [
         [
             "visual",
             {
-                // TODO: REPORT options is `this` object - it is useless
+                // REPORTED options is `this` object - it is useless
+                // https://github.com/webdriverio/visual-testing/issues/733
                 baselineFolder: (options) => {
                     // TS ERROR Property 'specs' does not exist on type 'ClassOptions'
                     // RUNTIME ERROR: Error: Error: Failed to initialise launcher service "visual": TypeError: Cannot read properties of undefined (reading '0')
-                    // TODO: REPORT
+                    // REPORTED
+                    // https://github.com/webdriverio/visual-testing/issues/733
                     const testFolder = path.dirname(options.specs[0]);
-                    // TODO: REPORT what is `type` supposed to be?
+                    // REPORTED what is `type` supposed to be?
+                    // https://github.com/webdriverio/visual-testing/issues/733
                     return path.join(testFolder, "snapshots", type);
                 },
             } satisfies VisualServiceOptions,

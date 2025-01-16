@@ -1,16 +1,17 @@
-import { defaultConfig } from "./wdio.base.conf";
+import { baseConfig } from "./wdio.base.conf";
 import type { ClassOptions } from 'webdriver-image-comparison';
 
 // https://github.com/webdriverio/visual-testing/blob/f4d9e654a746d09e9ca2567ffe69200c161cc14b/packages/visual-service/src/types.ts#L62
 type VisualServiceOptions = ClassOptions;
 
 export const config: WebdriverIO.Config = {
-    ...defaultConfig,
-	services: [
+    ...baseConfig,
+    services: [
         [
             "visual",
             {
-                // TODO: REPORT it is not possible to create paths in formatImageName.
+                // REPORTED it is not possible to create paths in formatImageName.
+                // https://github.com/webdriverio/visual-testing/issues/730
                 // * This should be documented.
                 // * Could be a simpler alternative to resolveSnapshotPath and screenshotPath.
                 //

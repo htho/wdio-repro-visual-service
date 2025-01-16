@@ -2,7 +2,7 @@
 // has no effect once there are more imports pointing at "webdriverio"
 // or packages depending on it.
 import {} from "webdriverio";
-export const defaultConfig: WebdriverIO.Config = {
+export const baseConfig: WebdriverIO.Config = {
     runner: 'local',
     tsConfigPath: './tsconfig.json',
     specs: [
@@ -12,8 +12,9 @@ export const defaultConfig: WebdriverIO.Config = {
     capabilities: [
         {
             browserName: 'chrome',
-            // TODO: REPORT
-            "wdio-ics:options": { // TS ERROR: Object literal may only specify known properties, and '"wdio-ics:options"' does not exist in type 'RequestedStandaloneCapabilities'.
+            // REPORT it IS possible to setup wdio-ics:options for non multi-remote configurations.
+            // https://github.com/webdriverio/visual-testing/issues/731
+            "wdio-ics:options": {
                 logName: "chromeLatest",
             },
         },

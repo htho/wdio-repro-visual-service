@@ -1,6 +1,6 @@
 // this is basically the example from
 // https://webdriver.io/docs/visual-testing/#webdriverio-multiremote
-export const _defaultConfig: WebdriverIO.MultiremoteConfig = {
+export const _baseConfig: WebdriverIO.MultiremoteConfig = {
     capabilities: {
         chromeBrowserOne: {
             capabilities: {
@@ -9,7 +9,7 @@ export const _defaultConfig: WebdriverIO.MultiremoteConfig = {
                     args: ["disable-infobars"],
                 },
                 // THIS!!!
-                // TODO: REPORT
+                // REPORTED https://github.com/webdriverio/visual-testing/issues/732
                 "wdio-ics:options": { // TS ERROR: Object literal may only specify known properties, and '"wdio-ics:options"' does not exist in type 'RequestedStandaloneCapabilities'.
                     logName: "chrome-latest-one",
                 },
