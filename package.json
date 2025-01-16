@@ -14,6 +14,7 @@
     "test:formatImageName": "wdio wdio-formatImageName.conf.ts",
     "test:formatImageNameWithPath": "wdio wdio-formatImageNameWithPath.conf.ts",
     "test:screenshotPath": "wdio wdio-screenshotPath.conf.ts",
-    "test:baselineFolder": "wdio wdio-baselineFolder.conf.ts"
+    "test:baselineFolder": "wdio wdio-baselineFolder.conf.ts",
+    "test:resolveSnapshotPath": "wdio wdio-resolveSnapshotPath.conf.ts"
   }
 }
