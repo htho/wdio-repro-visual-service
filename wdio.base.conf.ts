@@ -1,4 +1,7 @@
-import {} from "webdriverio"; // dummy for ts to include WebdriverIO type
+// dummy for ts to include WebdriverIO type for the first time
+// has no effect once there are more imports pointing at "webdriverio"
+// or packages depending on it.
+import {} from "webdriverio";
 export const defaultConfig: WebdriverIO.Config = {
     runner: 'local',
     tsConfigPath: './tsconfig.json',

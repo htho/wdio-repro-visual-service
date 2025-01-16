@@ -11,6 +11,8 @@
   },
   "scripts": {
     "test:default": "wdio wdio-default.conf.ts",
-    "test:formatImageName": "wdio wdio-formatImageName.conf.ts"
+    "test:formatImageName": "wdio wdio-formatImageName.conf.ts",
+    "test:screenshotPath": "wdio wdio-screenshotPath.conf.ts",
+    "test:baselineFolder": "wdio wdio-baselineFolder.conf.ts"
   }
 }
