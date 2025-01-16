@@ -9,20 +9,19 @@ export const config: WebdriverIO.Config = {
 
     logLevel: "error",
     
-    // resolveSnapshotPath(testPath, _snapExtension) {
-	// 	const cwd = process.cwd();
-	// 	const testPathRel = path.relative(cwd, testPath);
-	// 	const joined = path.join(cwd, "screenshots", testPathRel);
-	// 	// we need the trailing "_" because there is an exception otherwise
-	// 	// ERROR @wdio/utils:shim: Error: EISDIR: illegal operation on a directory, read
-	// 	return joined+"_";
-	// },
+    // TODO: REPORT setting up this, throws an error, but tests continue...
+    // ERROR @wdio/utils:shim: Error: EISDIR: illegal operation on a directory, read
+    resolveSnapshotPath(testPath, _snapExtension) {
+		const cwd = process.cwd();
+		const testPathRel = path.relative(cwd, testPath);
+		const joined = path.join(cwd, "screenshots", testPathRel);
+		return joined;
+	},
 
 	services: [
         [
             "visual",
             {
-                // savePerInstance: false,
             } satisfies VisualServiceOptions,
         ],
     ],
