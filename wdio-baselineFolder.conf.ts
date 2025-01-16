@@ -10,7 +10,7 @@ export const config: WebdriverIO.Config = {
         [
             "visual",
             {
-                // TODO: REPORT options is this object - it is useless
+                // TODO: REPORT options is `this` object - it is useless
                 baselineFolder: (options) => {
                     // TS ERROR Property 'specs' does not exist on type 'ClassOptions'
                     // RUNTIME ERROR: Error: Error: Failed to initialise launcher service "visual": TypeError: Cannot read properties of undefined (reading '0')

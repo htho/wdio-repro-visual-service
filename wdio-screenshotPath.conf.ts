@@ -10,7 +10,7 @@ export const config: WebdriverIO.Config = {
         [
             "visual",
             {
-                // TODO: REPORT options is this object - it is useless
+                // TODO: REPORT options is `this` object - it is useless
                 screenshotPath(options) {
                     // TODO: REPORT the example makes no sense:
                     // https://webdriver.io/docs/visual-testing/service-options#screenshotpath
