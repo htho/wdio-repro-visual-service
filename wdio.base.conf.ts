@@ -12,7 +12,7 @@ export const baseConfig: WebdriverIO.Config = {
     capabilities: [
         {
             browserName: 'chrome',
-            // REPORT it IS possible to setup wdio-ics:options for non multi-remote configurations.
+            // REPORTED it IS possible to setup wdio-ics:options for non multi-remote configurations.
             // https://github.com/webdriverio/visual-testing/issues/731
             "wdio-ics:options": {
                 logName: "chromeLatest",
