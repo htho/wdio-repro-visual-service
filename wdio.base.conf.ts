@@ -9,9 +9,16 @@ export const defaultConfig: WebdriverIO.Config = {
     capabilities: [
         {
             browserName: 'chrome',
+            // TODO: REPORT
+            "wdio-ics:options": { // TS ERROR: Object literal may only specify known properties, and '"wdio-ics:options"' does not exist in type 'RequestedStandaloneCapabilities'.
+                logName: "chromeLatest",
+            },
         },
         {
             browserName: 'firefox',
+            "wdio-ics:options": {
+                logName: "firefox-latest-one",
+            },
         }
     ],
     logLevel: 'info',
